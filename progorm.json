@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "develop-pillow-talk",
+      "name": "develop-pillow-talk addr :端口",
       "min_uptime": "12h",
       "script": "./pillow-talk",
       "instances": 1,
