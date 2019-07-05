@@ -3,7 +3,10 @@
     {
       "name": "develop-pillow-talk",
       "min_uptime": "12h",
-      "script": "./pillow-talk -addr :端口",
+      "script": "./pillow-talk",
+      "args": [
+        "-addr=:18081"
+      ],
       "instances": 1,
       "watch": true,
       "max_restarts": 10,
