@@ -27,7 +27,8 @@ const (
 	pingPeriod = (pongWait * 9) / 10
 
 	// Maximum message size allowed from peer.
-	// 每次从缓冲读取的数据大小，0.5k
+	//字节大小设置
+	// 每次从缓冲读取的数据大小，UTF-8编码中，一个英文字符等于一个字节，一个中文（含繁体）等于三个字节。
 	maxMessageSize = 512
 )
 
@@ -59,7 +60,7 @@ func (c *Client) readPump() {
 		c.conn.Close()
 	}()
 
-	//设置从io读中取出的消息大小,取出0.5k的消息
+	//设置从io读中取出的消息大小,取出最大的字节，超过字节会断开连接
 	c.conn.SetReadLimit(maxMessageSize)
 	//设置读取的超时时间为1分钟
 	c.conn.SetReadDeadline(time.Now().Add(pongWait))
