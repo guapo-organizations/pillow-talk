@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "name": "develop-pillow-talk",
+      "min_uptime": "12h",
+      "script": "./pillow-talk",
+      "instances": 1,
+      "watch": true,
+      "max_restarts": 10,
+      "restart_delay": 4000
+    }
+  ]
+}
