@@ -42,7 +42,8 @@ func main() {
 	})
 
 	//启动服务咯
-	err := http.ListenAndServe(*addr, nil)
+	//err := http.ListenAndServe(*addr, nil)
+	err := http.ListenAndServeTLS(*addr, "./tls/server1.pem", "./tls/server1.key", nil)
 	if err != nil {
 		log.Fatal("启动服务失败:", err)
 	}
